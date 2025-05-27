@@ -18,19 +18,19 @@ type GeoLocation struct {
 }
 
 var randomLocations []GeoLocation = []GeoLocation{
-	{"London", -0.1278, 51.5074},
-	{"Tokyo", 139.6917, 35.6895},
-	{"Paris", 2.3522, 48.8566},
-	{"Mumbai", 72.8777, 19.0760},
-	{"Shanghai", 121.4854, 31.2351},
-	{"Beijing", 116.4074, 39.9042},
-	{"Istanbul", 28.9784, 41.0082},
+	{"London", -0.127834, 51.507456},
+	{"Tokyo", 139.691754, 35.689512},
+	{"Paris", 2.352224, 48.856689},
+	{"Mumbai", 72.877727, 19.076032},
+	{"Shanghai", 121.485487, 31.235182},
+	{"Beijing", 116.407449, 39.904227},
+	{"Istanbul", 28.978447, 41.008235},
 }
 
 // Returns the command string for the GeoLocation in the format "longitude latitude key"
-// Latitude and longitude are specified upto 4 decimal places.
+// Latitude and longitude are specified upto 6 decimal places.
 func (m *GeoLocation) command() string {
-	return fmt.Sprintf("%.4f %.4f %s", m.longitude, m.latitude, m.key)
+	return fmt.Sprintf("%.6f %.6f %s", m.longitude, m.latitude, m.key)
 }
 
 func (m *GeoLocation) toRedisGeoLocation() *redis.GeoLocation {
@@ -79,6 +79,7 @@ func (t *GeoAddTest) Run(client *redis.Client, logger *logger.Logger) error {
 		return nil
 	}
 
+	// Check the response
 	expectedResponse := int64(len(locations))
 	if resp != expectedResponse && t.expectedError != "" {
 		logger.Infof("Received response: %q", resp)
