@@ -237,5 +237,9 @@ var testerDefinition = tester_definition.TesterDefinition{
 			Slug:     "jf8",
 			TestFunc: testTxMultiTx,
 		},
+		{
+			Slug:     "kj2",
+			TestFunc: testGeospatialGeoaddRecognize,
+		},
 	},
 }
