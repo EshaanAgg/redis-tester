@@ -25,6 +25,15 @@ func testGeospatialGeoaddMulti(stageHarness *test_case_harness.TestCaseHarness) 
 			key:       "cities_2",
 			locations: random.RandomElementsFromArray(randomLocations, 5),
 		},
+		// Should reject if any one of the locations is invalid
+		{
+			key: "invalid_city",
+			locations: []GeoLocation{
+				random.RandomElementFromArray(randomLocations),
+				{"invalid_lat", 91.123456, 181.123456},
+			},
+			expectedError: "ERR invalid longitude,latitude pair 91.123456,181.123456",
+		},
 	}
 
 	for _, tc := range testCases {
