@@ -239,15 +239,23 @@ var testerDefinition = tester_definition.TesterDefinition{
 		},
 		{
 			Slug:     "kj2",
-			TestFunc: testGeospatialGeoaddRecognize,
+			TestFunc: testGeospatialAddSingle,
 		},
 		{
 			Slug:     "pq5",
-			TestFunc: testGeospatialGeoaddValid,
+			TestFunc: testGeospatialAddInvalid,
 		},
 		{
 			Slug:     "si2",
-			TestFunc: testGeospatialGeoaddMulti,
+			TestFunc: testGeospatialAddMulti,
+		},
+		{
+			Slug:     "xy3",
+			TestFunc: testGeospatialHashSingle,
+		},
+		{
+			Slug:     "zw4",
+			TestFunc: testGeospatialHashMulti,
 		},
 	},
 }

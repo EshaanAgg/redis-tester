@@ -6,7 +6,7 @@ import (
 	"github.com/codecrafters-io/tester-utils/test_case_harness"
 )
 
-func testGeospatialAddMulti(stageHarness *test_case_harness.TestCaseHarness) error {
+func testGeospatialHashMulti(stageHarness *test_case_harness.TestCaseHarness) error {
 	b := redis_executable.NewRedisExecutable(stageHarness)
 	if err := b.Run(); err != nil {
 		return err
@@ -16,22 +16,25 @@ func testGeospatialAddMulti(stageHarness *test_case_harness.TestCaseHarness) err
 	client := NewRedisClient("localhost:6379")
 	defer client.Close()
 
+	locations1 := random.RandomElementsFromArray(randomLocations, 3)
+	locations2 := random.RandomElementsFromArray(randomLocations, 5)
+
 	testCases := []RunnableTestCase{
 		&GeoAddTest{
-			key:       "cities_1",
-			locations: random.RandomElementsFromArray(randomLocations, 2),
+			key:       "cities-1",
+			locations: locations1,
+		},
+		&GeoHashTest{
+			key:       "cities-1",
+			locations: random.RandomElementsFromArray(locations1, 2),
 		},
 		&GeoAddTest{
-			key:       "cities",
-			locations: random.RandomElementsFromArray(randomLocations, 5),
+			key:       "cities-2",
+			locations: locations2,
 		},
-		// Should reject if any one of the locations is invalid
-		&GeoAddTest{
-			key: "invalid_city",
-			locations: []GeoLocation{
-				random.RandomElementFromArray(randomLocations),
-				{"invalid_lat", 91.123456, 181.123456},
-			},
+		&GeoHashTest{
+			key:       "cities-2",
+			locations: random.RandomElementsFromArray(locations2, 4),
 		},
 	}
 
