@@ -22,7 +22,7 @@ func testGeospatialAddMulti(stageHarness *test_case_harness.TestCaseHarness) err
 			locations: random.RandomElementsFromArray(randomLocations, 2),
 		},
 		&GeoAddTest{
-			key:       "cities",
+			key:       "cities_2",
 			locations: random.RandomElementsFromArray(randomLocations, 5),
 		},
 		// Should reject if any one of the locations is invalid
