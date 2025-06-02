@@ -18,25 +18,25 @@ func testGeospatialAddInvalid(stageHarness *test_case_harness.TestCaseHarness) e
 
 	testCases := []RunnableTestCase{
 		&GeoAddTest{
-			key: "cities_1",
+			key: "cities",
 			locations: []GeoLocation{
 				{"invalid_long", -180.000123, 12.345678},
 			},
 		},
 		&GeoAddTest{
-			key: "cities_2",
+			key: "cities",
 			locations: []GeoLocation{
 				{"invalid_long_2", 180.000123, 12.345678},
 			},
 		},
 		&GeoAddTest{
-			key: "cities_3",
+			key: "cities",
 			locations: []GeoLocation{
 				{"invalid_lat", 12.345678, -85.101234},
 			},
 		},
 		&GeoAddTest{
-			key: "cities_4",
+			key: "cities",
 			locations: []GeoLocation{
 				{"invalid_lat_2", 12.345678, 85.101234},
 			},

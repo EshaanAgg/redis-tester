@@ -21,13 +21,13 @@ type GeoLocation struct {
 }
 
 var randomLocations []GeoLocation = []GeoLocation{
-	{"London", -0.127834, 51.507456},
-	{"Tokyo", 139.691754, 35.689512},
-	{"Paris", 2.352224, 48.856689},
-	{"Mumbai", 72.877727, 19.076032},
-	{"Shanghai", 121.485487, 31.235182},
-	{"Beijing", 116.407449, 39.904227},
-	{"Istanbul", 28.978447, 41.008235},
+	{"london", -0.127834, 51.507456},
+	{"tokyo", 139.691754, 35.689512},
+	{"paris", 2.352224, 48.856689},
+	{"mumbai", 72.877727, 19.076032},
+	{"shanghai", 121.485487, 31.235182},
+	{"beijing", 116.407449, 39.904227},
+	{"istanbul", 28.978447, 41.008235},
 }
 
 // Returns the command string for the GeoLocation in the format "longitude latitude key"

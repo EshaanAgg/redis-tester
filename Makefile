@@ -69,7 +69,7 @@ test_txn_with_redis: build
 
 test_geo_with_redis: build
 	CODECRAFTERS_REPOSITORY_DIR=./internal/test_helpers/pass_all \
-	CODECRAFTERS_TEST_CASES_JSON="[{\"slug\":\"kj2\",\"tester_log_prefix\":\"stage-501\",\"title\":\"Stage #501: GEOADD-1\"},{\"slug\":\"pq5\",\"tester_log_prefix\":\"stage-502\",\"title\":\"Stage #502: GEOADD-2\"},{\"slug\":\"si2\",\"tester_log_prefix\":\"stage-503\",\"title\":\"Stage #503: GEOADD-3\"},{\"slug\":\"xy3\",\"tester_log_prefix\":\"stage-504\",\"title\":\"Stage #504: GEOHASH-1\"},{\"slug\":\"zw4\",\"tester_log_prefix\":\"stage-505\",\"title\":\"Stage #505: GEOHASH-2\"}]" \
+	CODECRAFTERS_TEST_CASES_JSON="[{\"slug\":\"kj2\",\"tester_log_prefix\":\"stage-501\",\"title\":\"Stage #501: GEOADD-1\"},{\"slug\":\"pq5\",\"tester_log_prefix\":\"stage-502\",\"title\":\"Stage #502: GEOADD-2\"},{\"slug\":\"si2\",\"tester_log_prefix\":\"stage-503\",\"title\":\"Stage #503: GEOADD-3\"},{\"slug\":\"rt7\",\"tester_log_prefix\":\"stage-504\",\"title\":\"Stage #504: GEOPOS-1\"},{\"slug\":\"uv3\",\"tester_log_prefix\":\"stage-505\",\"title\":\"Stage #505: GEOPOS-2\"},{\"slug\":\"wx2\",\"tester_log_prefix\":\"stage-506\",\"title\":\"Stage #506: GEOPOS-3\"},{\"slug\":\"xy3\",\"tester_log_prefix\":\"stage-507\",\"title\":\"Stage #507: GEOHASH-1\"},{\"slug\":\"zw4\",\"tester_log_prefix\":\"stage-508\",\"title\":\"Stage #508: GEOHASH-2\"}]" \
 	dist/main.out
 
 test_all_with_redis: 
