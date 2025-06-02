@@ -246,6 +246,10 @@ var testerDefinition = tester_definition.TesterDefinition{
 			TestFunc: testGeospatialAddInvalid,
 		},
 		{
+			Slug:     "si2",
+			TestFunc: testGeospatialAddMulti,
+		},
+		{
 			Slug:     "rt7",
 			TestFunc: testGeospatialPosSingle,
 		},
@@ -256,10 +260,6 @@ var testerDefinition = tester_definition.TesterDefinition{
 		{
 			Slug:     "wx2",
 			TestFunc: testGeospatialPosMulti,
-		},
-		{
-			Slug:     "si2",
-			TestFunc: testGeospatialAddMulti,
 		},
 		{
 			Slug:     "xy3",
