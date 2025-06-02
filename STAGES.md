@@ -79,7 +79,7 @@ Expected output:
 If the coordinates are valid, your Redis implementation should continue to return `:1\r\n` just like in the previous stage.
 
 
-# Stage 3: Support multiple entries in GEOADD
+# Stage 3: Multiple members in GEOADD
 
 - **Slug**: `si2`
 - **Difficulty**: `easy`
@@ -131,7 +131,7 @@ Expected response:
 ```
 
 
-# Stage 4: Implement GEOPOS command
+# Stage 4: Respond to GEOPOS command
 
 - **Slug**: `rt7`
 - **Difficulty**: `easy`
@@ -229,7 +229,7 @@ The expected output is:
 
 It will also test existing members to ensure they return the correct coordinates like the previous stage.
 
-# Stage 6: Support multiple members in GEOPOS
+# Stage 6: Multiple members in GEOPOS
 
 - **Slug**: `wx2`
 - **Difficulty**: `easy`
@@ -335,7 +335,7 @@ The expected output is:
 
 or similar, as long as the geohash decodes to the correct longitude and latitude with a precision of 5 decimal places.
 
-# Stage 8: Support mutliple memebers in GEOHASH command
+# Stage 8: Mutliple members in GEOHASH command
 
 - **Slug**: `zw4`
 - **Difficulty**: `easy`
@@ -436,7 +436,7 @@ $11\r\n343646.2197\r\n
 
 The tester would not expect you to return the exact same distance as Redis does, but would accept any distance which is within a 1% margin of error from the correct distance calculated by the Haversine formula.
 
-# Stage 10: Support multiple units in GEODIST 
+# Stage 10: Multiple units in GEODIST 
 
 - **Slug**: `qv8`
 - **Difficulty**: `easy`

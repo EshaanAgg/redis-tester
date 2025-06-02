@@ -11,6 +11,8 @@ import (
 	"github.com/go-redis/redis"
 )
 
+const RADIUS_EARTH_METERS = 6373000.0 // meters
+
 type GeoDistUnit string
 
 const (
@@ -87,9 +89,7 @@ func (g *GeoDisTest) getDistance() float64 {
 	a := math.Sin(dLat/2)*math.Sin(dLat/2) + math.Cos(latA)*math.Cos(latB)*math.Sin(dLon/2)*math.Sin(dLon/2)
 	c := 2 * math.Atan2(math.Sqrt(a), math.Sqrt(1-a))
 
-	// Radius of the Earth in meters
-	radius := 6371000.0
-	distM := radius * c                      // Distance in meters
+	distM := c * RADIUS_EARTH_METERS         // Distance in meters
 	return distM / g.unit.getConvertFactor() // Convert to the requested unit
 }
 
@@ -106,15 +106,14 @@ func (g *GeoDisTest) Run(client *redis.Client, logger *logger.Logger) error {
 	const errorMargin = 0.01
 	expectedDistance := g.getDistance()
 	difference := math.Abs(resp - expectedDistance)
+	errPercentage := fmt.Sprintf("%.2f%%", (difference/expectedDistance)*100)
+
 	if difference > expectedDistance*errorMargin {
-		errMsg := fmt.Sprintf("Expected distance: %.6f %s, got: %.6f %s (difference: %.6f %s)",
-			expectedDistance, g.unit, resp, g.unit, difference, g.unit)
-		return fmt.Errorf(errMsg)
+		return fmt.Errorf("distance mismatch: expected %.6f %s, got %.6f %s (error: %s)",
+			expectedDistance, g.unit, resp, g.unit, errPercentage)
 	}
 
-	errPercentage := fmt.Sprintf("%.2f%%", (difference/expectedDistance)*100)
 	logger.Successf("Correctly logged distance: %.6f %s (%s error)", resp, g.unit, errPercentage)
-
 	return nil
 }
 
