@@ -78,4 +78,4 @@ test_all_with_redis:
 	make test_rdb_with_redis || true
 	make test_streams_with_redis || true
 	make test_txn_with_redis || true
-	make test_geo_with_redis
+	make test_geo_with_redis || true

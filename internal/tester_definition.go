@@ -269,5 +269,13 @@ var testerDefinition = tester_definition.TesterDefinition{
 			Slug:     "zw4",
 			TestFunc: testGeospatialHashMulti,
 		},
+		{
+			Slug:     "qv5",
+			TestFunc: testGeospatialDis,
+		},
+		{
+			Slug:     "qz8",
+			TestFunc: testGeospatialDisUnits,
+		},
 	},
 }
