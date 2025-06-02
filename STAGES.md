@@ -82,7 +82,7 @@ If the coordinates are valid, your Redis implementation should continue to retur
 # Stage 3: Support multiple entries in GEOADD
 
 - **Slug**: `si2`
-- **Difficulty**: `medium`
+- **Difficulty**: `easy`
 - **Marketing**: Redis's `GEOADD` command supports adding multiple geospatial items in one go. In this stage, you'll implement this batch insert capability with proper validation.
 
 Up until now, your `GEOADD` implementation may have only supported inserting one location per command. Redis allows clients to insert multiple locations in a single `GEOADD` command, and you will now need to support this feature.
@@ -232,7 +232,7 @@ It will also test existing members to ensure they return the correct coordinates
 # Stage 6: Support multiple members in GEOPOS
 
 - **Slug**: `wx2`
-- **Difficulty**: `medium`
+- **Difficulty**: `easy`
 - **Marketing**: In this stage, you will extend your `GEOPOS` implementation to support retrieving coordinates for multiple members in a single command.
 
 In this stage, you will enhance your `GEOPOS` implementation to support retrieving coordinates for multiple members in a single command.
@@ -439,7 +439,7 @@ The tester would not expect you to return the exact same distance as Redis does,
 # Stage 10: Support multiple units in GEODIST 
 
 - **Slug**: `qv8`
-- **Difficulty**: `medium`
+- **Difficulty**: `easy`
 - **Marketing**: In this stage, you will extend your `GEODIST` implementation to support multiple units for distance measurement.
 
 In this stage, you will enhance your `GEODIST` implementation to support multiple units for distance measurement.
