@@ -2,7 +2,7 @@
   
 - **Slug**: `kj2`
 - **Difficulty**: `easy` 
-- **Marketing**: In this stage, you will implement the `GEOADD` command to add geospatial data to Redis.
+- **Summary**: In this stage, you will implement the `GEOADD` command to add geospatial data to Redis.
 
 In this stage, you will implement the support for the [GEOADD](https://redis.io/docs/latest/commands/geoadd/) command. 
 
@@ -39,7 +39,7 @@ which is the RESP2 encoding for the [simple integer](https://redis.io/docs/lates
 
 - **Slug**: `pq5`
 - **Difficulty**: `easy`
-- **Marketing**: In this stage, you will improve your `GEOADD` implementation by validating the latitude and longitude values provided by the user.
+- **Summary**: In this stage, you will improve your `GEOADD` implementation by validating the latitude and longitude values provided by the user.
 
 In this stage, you will add validation logic to your `GEOADD` implementation. Redis requires longitude and latitude values to fall within a valid range:
 
@@ -83,7 +83,7 @@ If the coordinates are valid, your Redis implementation should continue to retur
 
 - **Slug**: `si2`
 - **Difficulty**: `easy`
-- **Marketing**: Redis's `GEOADD` command supports adding multiple geospatial items in one go. In this stage, you'll implement this batch insert capability with proper validation.
+- **Summary**: Redis's `GEOADD` command supports adding multiple geospatial items in one go. In this stage, you'll implement this batch insert capability with proper validation.
 
 Up until now, your `GEOADD` implementation may have only supported inserting one location per command. Redis allows clients to insert multiple locations in a single `GEOADD` command, and you will now need to support this feature.
 
@@ -135,7 +135,7 @@ Expected response:
 
 - **Slug**: `rt7`
 - **Difficulty**: `easy`
-- **Marketing**: In this stage, you will implement the `GEOPOS` command to retrieve the coordinates of members stored using `GEOADD`.
+- **Summary**: In this stage, you will implement the `GEOPOS` command to retrieve the coordinates of members stored using `GEOADD`.
 
 In this stage, you will implement support for the [GEOPOS](https://redis.io/docs/latest/commands/geopos/) command.
 
@@ -191,7 +191,7 @@ The expected output is:
 
 - **Slug**: `uv3`
 - **Difficulty**: `easy`
-- **Marketing**: In this stage, you will improve your `GEOPOS` implementation to handle cases where the requested member does not exist.
+- **Summary**: In this stage, you will improve your `GEOPOS` implementation to handle cases where the requested member does not exist.
 
 In this stage, you will enhance your `GEOPOS` implementation to handle cases where the requested member does not exist in the geospatial key.
 
@@ -233,7 +233,7 @@ It will also test existing members to ensure they return the correct coordinates
 
 - **Slug**: `wx2`
 - **Difficulty**: `easy`
-- **Marketing**: In this stage, you will extend your `GEOPOS` implementation to support retrieving coordinates for multiple members in a single command.
+- **Summary**: In this stage, you will extend your `GEOPOS` implementation to support retrieving coordinates for multiple members in a single command.
 
 In this stage, you will enhance your `GEOPOS` implementation to support retrieving coordinates for multiple members in a single command.
 
@@ -290,7 +290,7 @@ It is expected to return the correct coordinates for both members in the format 
 
 - **Slug**: `xy3`
 - **Difficulty**: `hard`
-- **Marketing**: In this stage, you’ll implement the `GEOHASH` command, which returns geohash strings for specified members in a geospatial index.
+- **Summary**: In this stage, you’ll implement the `GEOHASH` command, which returns geohash strings for specified members in a geospatial index.
 
 In this stage, you'll implement support for the [`GEOHASH`](https://redis.io/docs/latest/commands/geohash/) command.
 
@@ -339,7 +339,7 @@ or similar, as long as the geohash decodes to the correct longitude and latitude
 
 - **Slug**: `zw4`
 - **Difficulty**: `easy`
-- **Marketing**: In this stage, you will extend your `GEOHASH` implementation to support multiple members in a single command.
+- **Summary**: In this stage, you will extend your `GEOHASH` implementation to support multiple members in a single command.
 
 In this stage, you will enhance your `GEOHASH` implementation to support retrieving geohashes for multiple members in a single command.
 
@@ -393,7 +393,7 @@ or similar, as long as the geohashes decode to the correct longitude and latitud
 
 - **Slug**: `qv5`
 - **Difficulty**: `medium`
-- **Marketing**: In this stage, you will implement the `GEODIST` command to calculate the distance between two members in a geospatial index.
+- **Summary**: In this stage, you will implement the `GEODIST` command to calculate the distance between two members in a geospatial index.
 
 In this stage, you will implement support for the [`GEODIST`](https://redis.io/docs/latest/commands/geodist/) command.
 
@@ -440,7 +440,7 @@ The tester would not expect you to return the exact same distance as Redis does,
 
 - **Slug**: `qv8`
 - **Difficulty**: `easy`
-- **Marketing**: In this stage, you will extend your `GEODIST` implementation to support multiple units for distance measurement.
+- **Summary**: In this stage, you will extend your `GEODIST` implementation to support multiple units for distance measurement.
 
 In this stage, you will enhance your `GEODIST` implementation to support multiple units for distance measurement.
 
